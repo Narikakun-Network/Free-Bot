@@ -13,8 +13,8 @@ client.on('ready', () => {
 
 client.on('message', message => {
   if (message.author.bot) return;
-  if (message.content.includes("なりかくん")) {
-    message.channel.send("なりかくんって誰？");
+  if (message.content.includes("今何時？")) {
+    message.channel.send(new Date.Now().toString());
   }
 })
 

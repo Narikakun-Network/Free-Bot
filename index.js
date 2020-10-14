@@ -15,8 +15,11 @@ client.on('message', message => {
   if (message.author.bot) return;
   if (message.content.includes("今何時")) {
     var now = new Date();
-    message.channel.send("現在時刻は、" + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " です。");
+    now.setTime(now.getTime() + 32400000);
+    message.channel.send("現在時刻は、" + now.getHours() + "時" + now.getMinutes() + "分" + now.getSeconds() + "秒 です。");
   }
 })
 
-client.login(process.env.DISCORD_BOT_SECRET);
+var tokens = require("./token.json");
+
+client.login(tokens.Discord_Token);
